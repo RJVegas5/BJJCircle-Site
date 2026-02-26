@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <title>BJJ Circle Gyms — Find & Follow BJJ Academies</title>
+  <meta name="description" content="Discover Brazilian Jiu-Jitsu (BJJ) gyms and academies, follow gym pages, see updates, announcements, and connect with the community. Built for gym culture." />
+  <meta name="robots" content="index,follow" />
+
+  <!-- Canonical (update when your real domain is live) -->
+  <link rel="canonical" href="https://www.bjjcircle.com/gyms.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="BJJ Circle Gyms — Find & Follow BJJ Academies" />
+  <meta property="og:description" content="Discover BJJ gyms, follow gym pages, and stay plugged into announcements, promotions, and community." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.bjjcircle.com/gyms.html" />
+  <meta property="og:image" content="https://www.bjjcircle.com/assets/og.jpg" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="BJJ Circle Gyms — Find & Follow BJJ Academies" />
+  <meta name="twitter:description" content="Discover BJJ gyms, follow gym pages, and stay plugged into announcements, promotions, and community." />
+  <meta name="twitter:image" content="https://www.bjjcircle.com/assets/og.jpg" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./styles.css" />
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebPage",
+    "name":"BJJ Circle Gyms",
+    "description":"Discover Brazilian Jiu-Jitsu gyms and follow gym pages for announcements, promotions, and community.",
+    "url":"https://www.bjjcircle.com/gyms.html",
+    "isPartOf":{
+      "@type":"WebSite",
+      "name":"BJJ Circle",
+      "url":"https://www.bjjcircle.com/"
+    }
+  }
+  </script>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="./index.html" aria-label="BJJ Circle Home">
+        <img src="./assets/logo.png" alt="BJJ Circle logo" />
+      </a>
+
+      <nav class="nav-links" aria-label="Primary">
+        <a href="./features.html">Features</a>
+        <a href="./gyms.html" style="color:#fff;" aria-current="page">Gyms</a>
+        <a class="nav-cta" href="./waitlist.html">Join Waitlist</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="kicker fade-in">🏫 Built for gym communities</div>
+
+      <h1 class="h1 fade-in" style="animation-delay:.08s;">
+        Find gyms. Follow culture. <span class="accent">Stay connected.</span>
+      </h1>
+
+      <p class="sub fade-in" style="animation-delay:.16s;">
+        Every academy gets a clean home for announcements, wins, promotions, and community — without turning into a messy group text.
+      </p>
+    </section>
+
+    <!-- Search / directory preview (no backend required yet) -->
+    <section class="section">
+      <div class="card" style="padding:20px;">
+        <h2 style="margin:0 0 10px;">Discover BJJ gyms</h2>
+        <p style="margin:0; color:var(--muted);">
+          Soon you’ll be able to browse gyms by city and follow their pages for updates. For now, join the waitlist and we’ll notify you when gym pages go live.
+        </p>
+
+        <form class="form" style="margin-top:16px;" data-waitlist>
+          <input class="input" type="email" placeholder="Email address" required autocomplete="email" />
+          <button class="btn" type="submit">Get Notified</button>
+          <div class="note" data-success style="display:none;"></div>
+        </form>
+
+        <p class="note" style="margin-top:10px;">
+          Popular searches: <span style="font-weight:800;">Las Vegas</span>, <span style="font-weight:800;">Henderson</span>, <span style="font-weight:800;">Summerlin</span>, <span style="font-weight:800;">San Diego</span>, <span style="font-weight:800;">Austin</span>
+        </p>
+      </div>
+    </section>
+
+    <!-- Feature grid -->
+    <section class="section">
+      <h2>What a gym page includes</h2>
+      <p>Everything members need — organized and easy to find.</p>
+
+      <div class="grid grid-3" style="margin-top:16px;">
+        <div class="card feature">
+          <div class="badge">📰</div>
+          <div class="title">Gym Feed</div>
+          <p>Promotions, wins, announcements, and gym-only posts — all in one place.</p>
+        </div>
+
+        <div class="card feature">
+          <div class="badge">👥</div>
+          <div class="title">Members + Roles</div>
+          <p>See who trains there and roles like Owner / Coach / Admin (clean signals, better culture).</p>
+        </div>
+
+        <div class="card feature">
+          <div class="badge">💬</div>
+          <div class="title">Gym Chat</div>
+          <p>A dedicated space for your team — separate from DMs and public posts.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- More details -->
+    <section class="section">
+      <div class="grid grid-2" style="margin-top:8px;">
+        <div class="card feature">
+          <div class="badge">🔒</div>
+          <div class="title">Public or private</div>
+          <p>Gyms can be open to join or require approval. Keep the culture tight.</p>
+          <p style="margin-top:10px; color:var(--muted);">
+            Public pages are great for discovery. Private pages keep team spaces clean.
+          </p>
+        </div>
+
+        <div class="card feature">
+          <div class="badge">📣</div>
+          <div class="title">Pinned announcements</div>
+          <p>Owners/coaches can pin important updates so members don’t miss them.</p>
+          <p style="margin-top:10px; color:var(--muted);">
+            Closures, schedule changes, promotions, competition reminders — handled.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Owners section -->
+    <section class="section">
+      <div class="card" style="padding:20px;">
+        <h2 style="margin:0 0 10px;">For gym owners</h2>
+        <p style="margin:0; color:var(--muted);">
+          BJJ Circle helps gyms communicate, grow, and keep members engaged — without spam or complexity.
+        </p>
+
+        <div class="grid grid-2" style="margin-top:16px;">
+          <div class="feature" style="padding:0;">
+            <div class="title">✅ Run promotions cleanly</div>
+            <p>Post offers and share them publicly or inside your gym.</p>
+          </div>
+          <div class="feature" style="padding:0;">
+            <div class="title">✅ Build community</div>
+            <p>Members connect with each other, not just the front desk.</p>
+          </div>
+          <div class="feature" style="padding:0;">
+            <div class="title">✅ Keep info in one place</div>
+            <p>Announcements, chat, and member identity tied to your gym.</p>
+          </div>
+          <div class="feature" style="padding:0;">
+            <div class="title">✅ Network with other gyms</div>
+            <p>Respectful gym-to-gym communication and collaboration.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section">
+      <div class="card" style="padding:20px;">
+        <h2 style="margin:0 0 10px;">Join the waitlist</h2>
+        <p style="margin:0; color:var(--muted);">Be first in line when gym pages go live.</p>
+
+        <form class="form" style="margin-top:16px;" data-waitlist>
+          <input class="input" type="email" placeholder="Email address" required autocomplete="email" />
+          <button class="btn" type="submit">Notify Me</button>
+          <div class="note" data-success style="display:none;"></div>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer (full-width dark bar like nav) -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-row">
+        <div style="display:flex; align-items:center; gap:10px;">
+          <img class="footer-logo" src="./assets/logo.png" alt="BJJ Circle" />
+          <span>© 2026 BJJ Circle. All rights reserved.</span>
+        </div>
+        <div style="display:flex; gap:14px;">
+          <a href="./privacy.html">Privacy</a>
+          <a href="./terms.html">Terms</a>
+          <a href="#" aria-label="BJJ Circle on Instagram">Instagram</a>
+          <a href="#" aria-label="BJJ Circle on TikTok">TikTok</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./script.js"></script>
+</body>
+</html>
