@@ -29,7 +29,7 @@
   <!-- ✅ App-ish -->
   <meta name="theme-color" content="#FF6B35" />
 
-  <!-- ✅ Structured Data (Google likes this) -->
+  <!-- ✅ Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -52,6 +52,44 @@
 </head>
 
 <body>
+
+  <!-- ✅ ENTER OVERLAY (ALWAYS SHOWS) -->
+  <div class="enter-overlay" data-enter-overlay>
+    <div class="enter-bg" aria-hidden="true">
+      <div class="enter-grid"></div>
+      <div class="enter-orb enter-orb-1"></div>
+      <div class="enter-orb enter-orb-2"></div>
+      <div class="enter-scan"></div>
+      <div class="enter-noise"></div>
+    </div>
+
+    <div class="enter-content" role="dialog" aria-modal="true" aria-label="Enter BJJ Circle">
+      <img class="enter-logo" src="./assets/logo.png" alt="BJJ Circle" />
+
+      <h1 class="enter-title">
+        <span class="enter-accent">BJJ</span> Circle
+      </h1>
+
+      <p class="enter-sub">
+        The social network built for the mats — rolls, questions, gyms, and real community.
+      </p>
+
+      <div class="enter-actions">
+        <button class="enter-btn" type="button" data-enter-btn>
+          <span class="enter-btn-glow" aria-hidden="true"></span>
+          Enter Now
+        </button>
+
+        <button class="enter-skip" type="button" data-skip-btn>
+          Skip
+        </button>
+      </div>
+
+      <div class="enter-hint">
+        Press <kbd>Enter</kbd> to continue • <kbd>Esc</kbd> to skip
+      </div>
+    </div>
+  </div>
 
   <!-- Navbar -->
   <header class="nav">
@@ -94,7 +132,7 @@
       </p>
     </section>
 
-    <!-- App-style feature strip -->
+    <!-- Highlights -->
     <section class="section" aria-label="Highlights">
       <div class="card" style="padding:24px; margin-top:10px;">
         <h2 style="margin:0 0 10px;">Built like your daily training flow</h2>
@@ -129,8 +167,8 @@
           </div>
 
           <div class="feature" style="padding:0;">
-            <div class="title">🛡️ Belt Identity</div>
-            <p>See belt ranks and gym affiliation for real context.</p>
+            <div class="title">🧠 Training context</div>
+            <p>Profiles show gym + experience so posts have real context.</p>
           </div>
         </div>
       </div>
@@ -141,7 +179,6 @@
       <div class="card mockup-wrap">
         <div class="mockup-grid">
 
-          <!-- Left copy -->
           <div>
             <h2 style="margin:0 0 10px;">See BJJ Circle in action</h2>
             <p style="margin:0; color:var(--muted);">
@@ -168,7 +205,6 @@
             </div>
           </div>
 
-          <!-- Right mockups -->
           <div class="mockup-stage" aria-label="App screenshots">
             <div class="phones">
               <div class="phone phone-left" aria-hidden="true">
@@ -195,12 +231,12 @@
       </div>
     </section>
 
-    <!-- Strong second CTA (conversion) -->
+    <!-- Strong second CTA -->
     <section class="section" aria-label="Waitlist">
       <div class="card" style="padding:40px; text-align:center;">
         <h2 style="margin:0 0 14px;">Be first on the mats.</h2>
         <p style="margin:0 auto 24px; max-width:680px; color:var(--muted);">
-          Founding members get early access, priority username claims, and an exclusive in-app badge.
+          Founding members get early access and priority username claims.
         </p>
 
         <form class="form" style="justify-content:center;" data-waitlist>
@@ -217,7 +253,6 @@
 
   </main>
 
-  <!-- Footer -->
   <footer class="footer">
     <div class="container">
       <div class="footer-row">
@@ -235,7 +270,32 @@
     </div>
   </footer>
 
-  <!-- Shared JS -->
+  <!-- ✅ Enter overlay logic (ALWAYS SHOW, buttons work) -->
+  <script>
+    (function () {
+      const overlay = document.querySelector("[data-enter-overlay]");
+      const enterBtn = document.querySelector("[data-enter-btn]");
+      const skipBtn = document.querySelector("[data-skip-btn]");
+      if (!overlay) return;
+
+      function closeOverlay() {
+        overlay.classList.add("is-hidden");
+        // After fade, remove from layout so page is clickable
+        window.setTimeout(() => {
+          overlay.style.display = "none";
+        }, 520);
+      }
+
+      enterBtn && enterBtn.addEventListener("click", closeOverlay);
+      skipBtn && skipBtn.addEventListener("click", closeOverlay);
+
+      window.addEventListener("keydown", (e) => {
+        if (overlay.classList.contains("is-hidden")) return;
+        if (e.key === "Enter" || e.key === "Escape") closeOverlay();
+      });
+    })();
+  </script>
+
   <script src="./script.js"></script>
 </body>
 </html>
