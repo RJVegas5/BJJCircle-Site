@@ -10,13 +10,9 @@
   <meta name="description" content="BJJ Circle is the social network built exclusively for Brazilian Jiu Jitsu (BJJ). Share rolls, ask questions, connect with gyms, and level up your training—without the noise." />
   <meta name="keywords" content="BJJ app, Brazilian Jiu Jitsu app, Jiu Jitsu social network, BJJ community, BJJ rolls app, jiu jitsu gyms, grappling app, BJJ training" />
   <meta name="robots" content="index,follow" />
-  <meta name="author" content="BJJ Circle" />
 
-  <!-- ✅ Canonical (LIVE DOMAIN) -->
+  <!-- ✅ Domain is live now -->
   <link rel="canonical" href="https://bjjcircle.com/" />
-
-  <!-- ✅ Sitemap (helps crawlers) -->
-  <link rel="sitemap" type="application/xml" title="Sitemap" href="https://bjjcircle.com/sitemap.xml" />
 
   <!-- ✅ Open Graph / Social -->
   <meta property="og:title" content="BJJ Circle | The Social Network Built for Brazilian Jiu Jitsu" />
@@ -59,7 +55,7 @@
 
 <body>
 
-  <!-- ✅ ENTER OVERLAY (ALWAYS SHOWS) -->
+  <!-- ✅ ENTER OVERLAY (shows once per tab session) -->
   <div class="enter-overlay" data-enter-overlay>
     <div class="enter-bg" aria-hidden="true">
       <div class="enter-grid"></div>
@@ -96,13 +92,16 @@
   </div>
 
   <!-- Navbar -->
-  <header class="nav">
+  <header class="nav" id="top">
     <div class="container nav-inner">
+      <!-- ✅ Logo ALWAYS goes to home (and won't re-trigger enter screen) -->
       <a class="brand" href="./index.html" aria-label="BJJ Circle home">
         <img src="./assets/logo.png" alt="BJJ Circle logo" />
       </a>
 
       <nav class="nav-links" aria-label="Primary">
+        <!-- ✅ Add real Home link -->
+        <a href="./index.html" style="color:#fff;">Home</a>
         <a href="./features.html">Features</a>
         <a href="./gyms.html">Gyms</a>
         <a class="nav-cta" href="./waitlist.html">Join Waitlist</a>
@@ -126,7 +125,7 @@
       </p>
 
       <form class="form fade-in" style="animation-delay:.24s;" data-waitlist>
-        <input class="input" type="email" placeholder="Enter your email for early access" required />
+        <input class="input" type="email" placeholder="Enter your email for early access" required autocomplete="email" />
         <button class="btn" type="submit">Get Early Access</button>
         <div class="note" data-success style="display:none;"></div>
       </form>
@@ -244,7 +243,7 @@
         </p>
 
         <form class="form" style="justify-content:center;" data-waitlist>
-          <input class="input" type="email" placeholder="Enter your email to join the waitlist" required />
+          <input class="input" type="email" placeholder="Enter your email to join the waitlist" required autocomplete="email" />
           <button class="btn" type="submit">Join the Waitlist</button>
           <div class="note" data-success style="display:none;"></div>
         </form>
@@ -273,29 +272,6 @@
       </div>
     </div>
   </footer>
-
-  <!-- ✅ Enter overlay logic (ALWAYS SHOW, Enter button works, Enter key works) -->
-  <script>
-    (function () {
-      const overlay = document.querySelector("[data-enter-overlay]");
-      const enterBtn = document.querySelector("[data-enter-btn]");
-      if (!overlay) return;
-
-      function closeOverlay() {
-        overlay.classList.add("is-hidden");
-        window.setTimeout(() => {
-          overlay.style.display = "none";
-        }, 520);
-      }
-
-      enterBtn && enterBtn.addEventListener("click", closeOverlay);
-
-      window.addEventListener("keydown", (e) => {
-        if (overlay.classList.contains("is-hidden")) return;
-        if (e.key === "Enter") closeOverlay();
-      });
-    })();
-  </script>
 
   <script src="./script.js"></script>
 </body>
