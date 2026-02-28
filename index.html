@@ -10,21 +10,23 @@
   <meta name="description" content="BJJ Circle is the social network built exclusively for Brazilian Jiu Jitsu (BJJ). Share rolls, ask questions, connect with gyms, and level up your training—without the noise." />
   <meta name="keywords" content="BJJ app, Brazilian Jiu Jitsu app, Jiu Jitsu social network, BJJ community, BJJ rolls app, jiu jitsu gyms, grappling app, BJJ training" />
   <meta name="robots" content="index,follow" />
-  <link rel="canonical" href="https://yourdomain.com/" />
+
+  <!-- ✅ Use your current Vercel URL for now (swap to https://www.bjjcircle.com/ later) -->
+  <link rel="canonical" href="https://bjjcircile-site.vercel.app/" />
 
   <!-- ✅ Open Graph / Social -->
   <meta property="og:title" content="BJJ Circle | The Social Network Built for Brazilian Jiu Jitsu" />
   <meta property="og:description" content="No influencers. No noise. Just jiu jitsu. Share rolls, ask questions, and connect with your gym." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://yourdomain.com/" />
-  <meta property="og:image" content="https://yourdomain.com/assets/og-image.png" />
+  <meta property="og:url" content="https://bjjcircile-site.vercel.app/" />
+  <meta property="og:image" content="https://bjjcircile-site.vercel.app/assets/og-image.png" />
   <meta property="og:image:alt" content="BJJ Circle app preview" />
 
   <!-- ✅ Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="BJJ Circle | The Social Network Built for Brazilian Jiu Jitsu" />
   <meta name="twitter:description" content="Share rolls, ask questions, connect with gyms, and level up your BJJ—without the noise." />
-  <meta name="twitter:image" content="https://yourdomain.com/assets/og-image.png" />
+  <meta name="twitter:image" content="https://bjjcircile-site.vercel.app/assets/og-image.png" />
 
   <!-- ✅ App-ish -->
   <meta name="theme-color" content="#FF6B35" />
@@ -64,10 +66,14 @@
     </div>
 
     <div class="enter-content" role="dialog" aria-modal="true" aria-label="Enter BJJ Circle">
+      <!-- Keep logo, but REMOVE duplicate name text -->
       <img class="enter-logo" src="./assets/logo.png" alt="BJJ Circle" />
 
-      <h1 class="enter-title">
-        <span class="enter-accent">BJJ</span> Circle
+      <!-- ✅ New headline (no “BJJ Circle” repetition) -->
+      <h1 class="enter-title enter-glitch" aria-label="Enter the mats">
+        <span aria-hidden="true" class="glitch-layer glitch-layer-1">Enter the mats.</span>
+        <span aria-hidden="true" class="glitch-layer glitch-layer-2">Enter the mats.</span>
+        Enter the mats.
       </h1>
 
       <p class="enter-sub">
@@ -79,14 +85,10 @@
           <span class="enter-btn-glow" aria-hidden="true"></span>
           Enter Now
         </button>
-
-        <button class="enter-skip" type="button" data-skip-btn>
-          Skip
-        </button>
       </div>
 
       <div class="enter-hint">
-        Press <kbd>Enter</kbd> to continue • <kbd>Esc</kbd> to skip
+        Press <kbd>Enter</kbd> to continue
       </div>
     </div>
   </div>
@@ -270,28 +272,25 @@
     </div>
   </footer>
 
-  <!-- ✅ Enter overlay logic (ALWAYS SHOW, buttons work) -->
+  <!-- ✅ Enter overlay logic (ALWAYS SHOW, Enter button works, Enter key works) -->
   <script>
     (function () {
       const overlay = document.querySelector("[data-enter-overlay]");
       const enterBtn = document.querySelector("[data-enter-btn]");
-      const skipBtn = document.querySelector("[data-skip-btn]");
       if (!overlay) return;
 
       function closeOverlay() {
         overlay.classList.add("is-hidden");
-        // After fade, remove from layout so page is clickable
         window.setTimeout(() => {
           overlay.style.display = "none";
         }, 520);
       }
 
       enterBtn && enterBtn.addEventListener("click", closeOverlay);
-      skipBtn && skipBtn.addEventListener("click", closeOverlay);
 
       window.addEventListener("keydown", (e) => {
         if (overlay.classList.contains("is-hidden")) return;
-        if (e.key === "Enter" || e.key === "Escape") closeOverlay();
+        if (e.key === "Enter") closeOverlay();
       });
     })();
   </script>
